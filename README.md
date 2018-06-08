@@ -52,6 +52,9 @@ Getting a predicted outcom at the test features.
 A confusion matrix is a table that is often used to describe the performance of a classification model (or "classifier") on a set of test data for which the true values are known.<br>
 >from sklearn.metrics import confusion_matrix<br>
 >cm = confusion_matrix(y_test, y_pred)<br>
-
+<img src="https://github.com/ujjwalanand1997/Diabetes-prediction/blob/master/confusion_matrix.png?raw=true" width="300"><br>
+## Accuracy 
+The confusion matrix is giving the measurement of accuracy of the model, In Which the correct values are 156(115+41) out of 192 values.<br>
+Hence, Accuracy outcome is 81.25%.
 
 
