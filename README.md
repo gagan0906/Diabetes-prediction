@@ -36,5 +36,22 @@ As, it is a medical data, missing data should be replaced be the thresold value 
 taking 25% of the data as the test data.<br>
 >from sklearn.cross_validation import train_test_split<br>
 >X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)<br>
+## Creating the Classification Model
+I am using K-neareast neighbours algorithm to classify in either having diabetes or not.<br>
+You can use any of the classification model, but it will affect the accuracy(i'm not saying KNN is the most efficient model in this problem), so use any classifier as you like.
+
+>from sklearn.neighbors import KNeighborsClassifier<br>
+>classifier = KNeighborsClassifier(n_neighbors = 5,metric = 'minkowski',p=2)<br>
+>classifier.fit(X_train,y_train)<br>
+
+## Predicting the Test set results
+Getting a predicted outcom at the test features.
+>y_pred = classifier.predict(X_test)<br>
+
+## Making the Confusion Matrix
+A confusion matrix is a table that is often used to describe the performance of a classification model (or "classifier") on a set of test data for which the true values are known.<br>
+>from sklearn.metrics import confusion_matrix<br>
+>cm = confusion_matrix(y_test, y_pred)<br>
+
 
 
