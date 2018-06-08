@@ -24,4 +24,17 @@ We need to specify the k i.e. number of predictors required, which shouid be tak
 >from sklearn.feature_selection import SelectKBest<br>
 >from sklearn.feature_selection import chi2<br>
 >X = SelectKBest(chi2, k=4).fit_transform(X, y)<br><br>
+## Managing Missing Values
+The dataset contain missing values, which needs to be managed as we know that BMI of any person cannot be 0.<br>
+So we use **Sklearn.preprocessing** library to get **Imputer** class, which statisticaly manages missing values<br>
+As, it is a medical data, missing data should be replaced be the thresold value of the feature, or it can be handled by general method, of taking mean of the whole column.<br>
+>from sklearn.preprocessing import Imputer<br>
+>imputer = Imputer(missing_values=0 , strategy="mean",axis=0)<br>
+>X[:,0:5] = imputer.fit_transform(X[:,0:5])<br>
+
+## Splitting the dataset into the Training set and Test set
+taking 25% of the data as the test data.<br>
+>from sklearn.cross_validation import train_test_split<br>
+>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)<br>
+
 
