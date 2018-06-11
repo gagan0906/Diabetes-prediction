@@ -26,7 +26,7 @@ We need to specify the k i.e. number of predictors required, which shouid be tak
 If we select a less values of k, then there may be a chance of overfitting, so we need to specify it as required by the use case.
 >from sklearn.feature_selection import SelectKBest<br>
 >from sklearn.feature_selection import chi2<br>
->X = SelectKBest(chi2, k=4).fit_transform(X, y)<br><br>
+>X = SelectKBest(chi2, k=4).fit_transform(X, y)<br>
 So, After this, we got 4 most effective features from the feature matrix, they are Age,BMI, Insulin, Glucose.
 ## Managing Missing Values
 The dataset contain missing values, which needs to be managed as we know that BMI of any person cannot be 0.<br>
