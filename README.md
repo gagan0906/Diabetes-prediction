@@ -29,6 +29,8 @@ If we select a less values of k, then there may be a chance of overfitting, so w
 >X = SelectKBest(chi2, k=4).fit_transform(X, y)<br>
 <br>
 So, After this, we got 4 most effective features from the feature matrix, they are Age,BMI, Insulin, Glucose.
+<br>
+
 ## Managing Missing Values
 The dataset contain missing values, which needs to be managed as we know that BMI of any person cannot be 0.<br>
 So we use **Sklearn.preprocessing** library to get **Imputer** class, which statisticaly manages missing values<br>
